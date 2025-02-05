@@ -118,7 +118,7 @@ public class DamageRender implements IGuiOverlay {
             y = (int) (y / scale);
             lh = (int) (lh / scale);
             long currentTime = new Date().getTime();
-            while (Data.latest.size() > 0 && Data.latest.get(0).getRight() < currentTime - 2000) {
+            while (Data.latest.size() > 0 && Data.latest.get(0).getRight() < currentTime - 5000) {
                 Data.latest.remove(0);
             }
             for (Pair<Float, Long> pair : Data.latest) {
@@ -140,7 +140,7 @@ public class DamageRender implements IGuiOverlay {
                 if (confirmTime == 0) {
                     confirmTime = new Date().getTime();
                 }
-                if (confirmTime != 0 && new Date().getTime() - confirmTime > 1500) {
+                if (confirmTime != 0 && new Date().getTime() - confirmTime > 2000) {
                     confirmTime = 0;
                     Data.confirm = false;
                     Data.show = false;
